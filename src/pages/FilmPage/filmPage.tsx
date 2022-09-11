@@ -10,15 +10,23 @@ import './filmPage.css';
 export const FilmPage = () => {
     const [loading, setLoading] = useState(false);
     const [film, setFilm] = useState<film>();
+    const [idImage, setIdImage] = useState('');
 
     const getFilm = async (id:string) => {
         setLoading(true);
         const movie = await api.getFilm(id);
         setFilm(movie);
+
+        //Parte que não funciona:
+        const urlArray = film.url.split('/');
+        const filmId = urlArray[urlArray.length - 2];
+        setIdImage(filmId);
+
         setLoading(false);
     }
 
     const params = useParams();
+
 
     useEffect(()=>{
         if(params.id) {
@@ -29,7 +37,7 @@ export const FilmPage = () => {
     return (
         <div className='filmPage'>
             <div className='film_img'>
-                <img src='' alt={film?.title} />
+                <img src={`https://starwars-visualguide.com/assets/img/films/${idImage}.jpg`} alt={film?.title} />
             </div>
             <div className='film_data'>
                 <div className='filmPage_title'>{film?.title}</div>
