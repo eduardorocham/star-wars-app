@@ -1,0 +1,12 @@
+.films {
+    background-color: #111;
+}
+
+.container_films {
+    max-width: 975px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+}
+

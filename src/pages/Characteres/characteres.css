@@ -1,0 +1,17 @@
+.characteres {
+    background-color: #111;
+}
+
+.characteres_container {
+    max-width: 975px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+}
+
+@media (max-width:414px) {
+    .characteres_container {
+        width: 390px;
+    }
+}

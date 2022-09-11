@@ -1,0 +1,31 @@
+* {
+    font-size: 62,5%;
+}
+
+button {
+    border-radius: 2rem;
+    font-family: 'PT Sans';
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 20rem;
+    cursor: pointer;
+    transition: all ease 02s;
+}
+
+button:hover {
+    transform: scale(1.2);
+    background-color: #00ffff;
+}
+
+@media (max-width: 414px) {
+    button {
+        display: none;
+        width: 25rem;
+        font-size: 2rem;
+        border-radius: 3rem;
+        padding: 1.5rem 0;
+        font-size: 2rem;
+    } 
+}

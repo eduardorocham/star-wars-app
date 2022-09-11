@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.filmPage {
+    padding: 55px;
+    display: flex;
+    align-items: center;
+    background-color: #1E1E1E;
+}
+
+.film_img {
+    width: 17.8rem;
+    height: 20.7rem;
+}
+
+.film_img img {
+    width: inherit;
+    height: inherit;
+}
+
+.filmPage_title {
+    color: #FFF;
+    font-size: 2.5rem;
+}
+
+.filmPage_bar {
+    width: 5rem;
+    height: 0.1rem;
+    background-color: #DFCC1D;
+    margin-top: 0.5rem;
+}
+
+.filmPage_desc {
+    color: #FFF;
+    font-size: 1.4rem;
+    margin: 1.2rem 0 1.6rem;
+}
+
+.film_data {
+    margin-left: 3rem;
+}
+
+.infos {
+    color: #FFF;
+    max-width: 26.1rem;
+    min-height: 7.5rem;
+    text-align: left;
+    border: 1px solid #DFCC1D;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.filmPage_info {
+    font-size: 1.4rem;
+}
+
+.filmPage_info span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
