@@ -9,6 +9,7 @@ import './filmPage.css';
 
 export const FilmPage = () => {
     const [film, setFilm] = useState<film>();
+    const [idImage, setIdImage] = useState('');
 
     const getFilm = async (id:string) => {
         const movie = await api.getFilm(id);
@@ -16,6 +17,7 @@ export const FilmPage = () => {
     }
 
     const params = useParams();
+
 
     useEffect(()=>{
         if(params.id) {
