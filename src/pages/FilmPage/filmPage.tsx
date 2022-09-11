@@ -8,14 +8,11 @@ import { film } from '../../types/film';
 import './filmPage.css';
 
 export const FilmPage = () => {
-    const [loading, setLoading] = useState(false);
     const [film, setFilm] = useState<film>();
 
     const getFilm = async (id:string) => {
-        setLoading(true);
         const movie = await api.getFilm(id);
         setFilm(movie);
-        setLoading(false);
     }
 
     const params = useParams();
@@ -24,12 +21,12 @@ export const FilmPage = () => {
         if(params.id) {
             getFilm(params.id)
         }
-    }, [])
+    }, [params.id])
 
     return (
         <div className='filmPage'>
             <div className='film_img'>
-                <img src='' alt={film?.title} />
+                <img src={`https://starwars-visualguide.com/assets/img/films/${params.id}.jpg`} alt={film?.title} />
             </div>
             <div className='film_data'>
                 <div className='filmPage_title'>{film?.title}</div>
