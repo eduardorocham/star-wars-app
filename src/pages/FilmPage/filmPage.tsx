@@ -23,7 +23,7 @@ export const FilmPage = () => {
         if(params.id) {
             getFilm(params.id)
         }
-    }, [params.id])
+    }, [])
 
     return (
         <div className='filmPage'>
