@@ -12,14 +12,17 @@
     background-color: #1E1E1E;
 }
 
+
 .vehiclePage_img {
-    width: 17.8rem;
-    height: 20.7rem;
+    width: 33.8rem;
+    height: 30rem;
+    transform: scale(0.8);
 }
 
 .vehiclePage_img img {
     width: inherit;
     height: inherit;
+    object-fit: cover;
 }
 
 .vehiclePage_name {

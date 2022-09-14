@@ -29,7 +29,7 @@ export const CharacterPage = () => {
         
         <div className='character_Page'>
             <div className='characterPage_img'>
-                <img src='' alt='' />
+                <img src={`https://starwars-visualguide.com/assets/img/characters/${params.id}.jpg`} alt={character?.name} />
             </div>
             <div className='characterPage_data'>
                 <div className='characterPage_name'>{character?.name}</div>

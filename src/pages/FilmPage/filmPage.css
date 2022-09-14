@@ -18,6 +18,7 @@
 }
 
 .film_img img {
+    object-fit: cover;
     width: inherit;
     height: inherit;
 }

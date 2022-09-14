@@ -1,0 +1,15 @@
+* {
+    font-size: 62,5%;
+}
+
+.personCicle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+}
+
+.personCicle img {
+    width: inherit;
+    height: inherit;
+}

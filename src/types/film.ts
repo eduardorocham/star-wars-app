@@ -1,3 +1,5 @@
+import { Person } from './person';
+
 export type film = {
     title: string, 
     episode_id: number, 
@@ -5,7 +7,7 @@ export type film = {
     director: string, 
     producer: string, 
     release_date: string, 
-    characters: [], 
+    characters: Person[], 
     planets: [], 
     starships: [], 
     vehicles: [], 

@@ -26,7 +26,7 @@ export const VehiclePage = () => {
     return (
         <section className='vehicle_Page'>
             <div className='vehiclePage_img'>
-                <img src='' alt='' />
+                <img src={`https://starwars-visualguide.com/assets/img/vehicles/${params.id}.jpg`} alt={vehicle?.name} />
             </div>
             <div className='vehiclePage_data'>
                 <div className='vehiclePage_name'>{vehicle?.name}</div>

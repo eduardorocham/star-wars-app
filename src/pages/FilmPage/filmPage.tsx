@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { api } from '../../api';
+import { PersonCicle } from '../../components/PersonCicle/personCicle';
 
 import { film } from '../../types/film';
 
@@ -40,6 +41,12 @@ export const FilmPage = () => {
                     <div className='filmPage_info'><span>Producer:</span>{film?.producer}</div>
                     <div className='filmPage_info'><span>Releaser Data:</span>{film?.release_date}</div>
                 </div>
+            </div>
+            <div>
+                {film?.characters.map((item, index)=>(
+                    <PersonCicle data={item} />
+                ))
+                }
             </div>
         </div>
     )
