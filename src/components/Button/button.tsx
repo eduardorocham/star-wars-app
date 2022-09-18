@@ -6,7 +6,7 @@ type Props = {
 
 export const Button = ({text}:Props) => {
     return (
-        <button>
+        <button className='button_geral'>
             {text}
         </button>
     )

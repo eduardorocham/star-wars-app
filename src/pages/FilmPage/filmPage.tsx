@@ -42,12 +42,6 @@ export const FilmPage = () => {
                     <div className='filmPage_info'><span>Releaser Data:</span>{film?.release_date}</div>
                 </div>
             </div>
-            <div>
-                {film?.characters.map((item, index)=>(
-                    <PersonCicle data={item} />
-                ))
-                }
-            </div>
         </div>
     )
 }

@@ -2,7 +2,7 @@
     font-size: 62,5%;
 }
 
-button {
+.button_geral {
     border-radius: 2rem;
     font-family: 'PT Sans';
     font-size: 1.6rem;
@@ -14,13 +14,13 @@ button {
     transition: all ease 02s;
 }
 
-button:hover {
+.button_geral:hover {
     transform: scale(1.2);
     background-color: #00ffff;
 }
 
 @media (max-width: 414px) {
-    button {
+    .button_geral {
         display: none;
         width: 25rem;
         font-size: 2rem;
