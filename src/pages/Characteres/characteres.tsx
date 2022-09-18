@@ -4,7 +4,7 @@ import { Person } from "../../components/Person/person";
 import { LoadingSpinner } from "../../components/LoadingSpinner/loadingSpinner";
 import { Person as PersonType } from "../../types/person";
 import './characteres.css';
-import { Pagination } from "../../components/Pagination/pagination";
+//import { Pagination } from "../../components/Pagination/pagination";
 
 export const Characteres = () => {
     const [loading, setLoading] = useState(false);
@@ -12,8 +12,7 @@ export const Characteres = () => {
     const [page, setPage] = useState(1);
 
     //Paginação:
-    const [itemsPerPage, setItemsPerPage] = useState(10);
-    const [currentpage, setCurrentPages] = useState(0);
+    const [itemsPerPage] = useState(10);
     const pages = Math.ceil(87 / itemsPerPage);
     
 
@@ -24,8 +23,9 @@ export const Characteres = () => {
         setLoading(false);
     }
 
-    const nextPage = (e) => {
-        setPage(parseInt(e.target.value));
+    const nextPage = (e: any) => {
+        setPage(parseInt(e.target.value || 1));
+        console.log(e.target.value);
     }
 
     useEffect(()=>{
@@ -49,7 +49,7 @@ export const Characteres = () => {
                     <div className='pagination'>
                         {Array.from(Array(pages), (item, index) => {
                             return (
-                                <button className='button_pagination' onClick={nextPage}>
+                                <button value={index} className='button_pagination' onClick={nextPage}>
                                     {index}
                                 </button>
                             )
