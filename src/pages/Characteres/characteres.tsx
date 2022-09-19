@@ -24,8 +24,10 @@ export const Characteres = () => {
     }
 
     const nextPage = (e: any) => {
-        setPage(parseInt(e.target.value || 1));
-        console.log(e.target.value);
+        if (e.target.value !== page) {
+        setPage(parseInt(e.target.value));
+        setList([]);
+        }
     }
 
     useEffect(()=>{
@@ -38,7 +40,7 @@ export const Characteres = () => {
                 <LoadingSpinner />
             }
 
-            {list && 
+            {list &&
                 <div className="characteres">
                     <div className="characteres_container">
                         {list.map((item, index)=>(
@@ -49,8 +51,8 @@ export const Characteres = () => {
                     <div className='pagination'>
                         {Array.from(Array(pages), (item, index) => {
                             return (
-                                <button value={index} className='button_pagination' onClick={nextPage}>
-                                    {index}
+                                <button value={index + 1} className='button_pagination' onClick={nextPage} key={index}>
+                                    {index + 1}
                                 </button>
                             )
                         })}
