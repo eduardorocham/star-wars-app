@@ -4,7 +4,6 @@ import { Person } from "../../components/Person/person";
 import { LoadingSpinner } from "../../components/LoadingSpinner/loadingSpinner";
 import { Person as PersonType } from "../../types/person";
 import './characteres.css';
-//import { Pagination } from "../../components/Pagination/pagination";
 
 export const Characteres = () => {
     const [loading, setLoading] = useState(false);

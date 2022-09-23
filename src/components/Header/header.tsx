@@ -1,22 +1,38 @@
-import './header.css';
+import { useState } from 'react';
 import logoImage from '../../assets/images/star_wars_logo.png';
+import menuMobile from '../../assets/images/menu_mobile.png';
 import { Link } from 'react-router-dom';
+import {
+    HeaderStyled,
+    LogoStyled,
+    MenuStyled,
+    MenuMobileStyled
+} from './headerStyles';
 
 
 export const Header = () => {
+    const [show, setShow] = useState(false);
+
+    const showMenu = () => {
+        setShow(!show);
+    }
+
     return (
-        <header>
-            <div className="logo">
-                <img src={logoImage} alt="Star_Wars_Logo" />
-            </div>
-            <div className="header_menu">
-                <ul>
-                    <Link to='/'><li className="link active">Home</li></Link>
-                    <Link to='/movies' className='link active'><li>Movies</li></Link>
-                    <Link to='/characteres' className='link'><li>Characters</li></Link>
-                    <Link to='/vehicles' className='link'><li>Vehicles</li></Link>
-                </ul>
-            </div>
-        </header>
+        <HeaderStyled>
+            <MenuMobileStyled>
+                <img src={menuMobile} alt="menu_mobile" />
+            </MenuMobileStyled>
+
+            <LogoStyled onClick={showMenu}>
+                <img src={logoImage} alt="star_wars_logo" width='100px' />
+            </LogoStyled>
+
+            <MenuStyled show={show}>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/movies'>Movies</Link></li>
+                <li><Link to='/characteres'>Characters</Link></li>
+                <li><Link to='/vehicles'>Vehicles</Link></li> 
+            </MenuStyled>
+        </HeaderStyled>
     )
 }
