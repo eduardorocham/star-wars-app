@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import  styles  from 'styled-components';
 
 export const HeaderStyled = styled.header`
     display: flex;
@@ -24,7 +23,12 @@ export const LogoStyled = styled.div`
 `
 
 export const MenuMobileStyled = styled.div`
-    margin-left: 10px;
+    display: none;
+
+    @media (max-width:414px) {
+        display: block;
+        margin-left: 10px;
+    }
 `
 
 type MenuStyledProps = {
@@ -51,7 +55,22 @@ export const MenuStyled = styled.ul<MenuStyledProps>`
     }
 
     @media (max-width:414px) {
-        display: ${(props) => props.show ? 'block' : 'none'};
+        display: none;
+        position: absolute;
+        width: 70vw;
+        height: calc(100vh - 60px);
+        z-index: 999;
+        left: 0;
+        top: 60px;
+        background-color: #121317;
+
+        li {
+            margin: 30px 0;
+        }
+
+        li a {
+            font-size: 20px;
+        }
     }
 `
 
