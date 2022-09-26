@@ -3,18 +3,32 @@ import { useParams } from 'react-router-dom';
 import { api } from '../../api';
 
 import { Person } from '../../types/person';
+import { film } from '../../types/film';
 
 import './characterPage.css';
+import { json } from 'stream/consumers';
 
 export const CharacterPage = () => {
     const [loading, setLoading] = useState(false);
     const [character, setCharacter] = useState<Person>();
+    const [films, setfilms] = useState([]);
 
     const getCharacter = async (id: string) => {
         setLoading(true);
         const person = await api.getCharacter(id);
         setCharacter(person);
-        setLoading(true);
+        setfilms(person.films);
+        const newArray =
+            films.map((item, index) => 
+                fetch(`${item}`).then(
+                    (response) => response.json()
+                ).then((json) => json)
+            );
+        console.log(newArray)
+    }
+
+    const getFilmsArray = () => {
+        
     }
 
     const params = useParams();
@@ -45,6 +59,13 @@ export const CharacterPage = () => {
                         <div className='characterPage_info'><span>Eye Color:</span>{character?.eye_color}</div>
                         <div className='characterPage_info'><span>Birth Year</span>{character?.birth_year}</div>
                         <div className='characterPage_info'><span>Gender:</span>{character?.gender}</div>
+                    </div>
+                </div>
+                <div className='characterPage_infos'>
+                    <div className='characterPage_infos-left'>
+                        <div className='characterPage_info'><span>Films:</span>
+                            {character?.films.length}
+                        </div>
                     </div>
                 </div>
             </div>
