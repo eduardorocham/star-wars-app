@@ -23,10 +23,8 @@ export const Characteres = () => {
     }
 
     const nextPage = (e: any) => {
-        if (e.target.value !== page) {
-        setPage(parseInt(e.target.value));
-        setList([]);
-        }
+            setPage(parseInt(e.target.value));
+            setList([]);
     }
 
     useEffect(()=>{

@@ -19,19 +19,19 @@ export const Header = () => {
 
     return (
         <HeaderStyled>
-            <MenuMobileStyled>
+            <MenuMobileStyled onClick={showMenu}>
                 <img src={menuMobile} alt="menu_mobile" />
             </MenuMobileStyled>
 
-            <LogoStyled onClick={showMenu}>
+            <LogoStyled>
                 <img src={logoImage} alt="star_wars_logo" width='100px' />
             </LogoStyled>
 
             <MenuStyled show={show}>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/movies'>Movies</Link></li>
-                <li><Link to='/characteres'>Characters</Link></li>
-                <li><Link to='/vehicles'>Vehicles</Link></li> 
+                <li><Link onClick={showMenu} to='/'>Home</Link></li>
+                <li><Link onClick={showMenu} to='/movies'>Movies</Link></li>
+                <li><Link onClick={showMenu} to='/characteres'>Characters</Link></li>
+                <li><Link onClick={showMenu} to='/vehicles'>Vehicles</Link></li> 
             </MenuStyled>
         </HeaderStyled>
     )

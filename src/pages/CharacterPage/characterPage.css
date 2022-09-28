@@ -63,3 +63,37 @@
     font-weight: bold;
     margin-right: 0.5rem;
 }
+
+@media(max-width: 414px) {
+    .character_Page {
+        flex-direction: column;
+    }
+
+    .characterPage_img {
+        width: 19.5rem;
+        height: 26.8rem;
+    }
+
+    .characterPage_data {
+        margin-left: 0;
+    }
+
+    .characterPage_name {
+        margin-top: 2rem;
+    }
+
+    .characterPage_infos {
+        flex-direction: column;
+        min-width: 30rem;
+        margin-top: 2rem;
+    }
+
+    .characterPage_info {
+        margin: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    .characterPage_info span {
+        font-size: 1.8rem;
+    }
+}

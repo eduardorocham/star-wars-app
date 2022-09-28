@@ -55,7 +55,7 @@ export const MenuStyled = styled.ul<MenuStyledProps>`
     }
 
     @media (max-width:414px) {
-        display: none;
+        display: ${(props) => props.show ? 'block' : 'none'};
         position: absolute;
         width: 70vw;
         height: calc(100vh - 60px);

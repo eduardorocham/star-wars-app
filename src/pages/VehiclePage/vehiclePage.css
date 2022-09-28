@@ -65,3 +65,29 @@
     font-weight: bold;
     margin-right: 0.5rem;
 }
+
+@media (max-width: 414px) {
+    .vehicle_Page {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .vehiclePage_data {
+        margin-left: 0;
+    }
+
+    .vehiclePage_infos {
+        min-width: 30rem;
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+
+    .vehiclePage_info {
+        margin: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    .vehiclePage_info span {
+        font-size: 1.8rem;
+    }
+}
