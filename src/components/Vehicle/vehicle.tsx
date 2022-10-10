@@ -4,16 +4,18 @@ import './vehicle.css';
 
 type Props = {
     id: number,
-    data: VehicleType
+    data: VehicleType,
+    page: number
 }
 
-export const Vehicle = ({id, data}:Props) => {
+export const Vehicle = ({id, data, page}:Props) => {
     const url = data.url;
     const urlArray = url.split('/');
+    console.log(urlArray[5]);
 
     return (
         <Link to={`/vehicles/${urlArray[5]}`} className="vehicle">
-            <img src={`https://starwars-visualguide.com/assets/img/vehicles/${urlArray[5]}.jpg`} alt={data.name} />
+            <img src= {page <= 2 ? `https://starwars-visualguide.com/assets/img/vehicles/${urlArray[5]}.jpg` : 'https://starwars-visualguide.com/assets/img/big-placeholder.jpg'} alt={data.name} />
             <div className='vehicle_desc'>
                 <div className='vehicle_bar'>
                         <div className='vehicle_bar-item1'></div>

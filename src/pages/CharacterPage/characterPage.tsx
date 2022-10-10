@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { api } from '../../api';
 
 import { LoadingSpinner } from '../../components/LoadingSpinner/loadingSpinner';
+import { FilmCircle } from '../../components/FilmCicle/filmCircle';
 
 import { Person } from '../../types/person';
 import { film } from '../../types/film';
@@ -13,6 +14,7 @@ import { json } from 'stream/consumers';
 export const CharacterPage = () => {
     const [loading, setLoading] = useState(false);
     const [character, setCharacter] = useState<Person>();
+    const [filmsCharacter, setFilmsCharacter] = useState<film[]>([]);
 
     const getCharacter = async (id: string) => {
         setLoading(true);
@@ -21,10 +23,13 @@ export const CharacterPage = () => {
         const person = await api.getCharacter(id);
         setCharacter(person);
 
-        //Pegar films do personagem
+        //Pegar filmes do personagem
         const links = person.films;
-        const filmsCharcater : any = [];
-        Promise.all(links.map((url: string) => fetch(url).then(response => response.json()))).then(fetchedFilms => filmsCharcater.push(fetchedFilms));
+        const fCharacter : any = [];
+        Promise.all(links.map((url: string) => fetch(url).then(response => response.json()))).then(fetchedFilms => fCharacter.push(fetchedFilms));
+        console.log(fCharacter);
+        setFilmsCharacter(fCharacter);
+        console.log(filmsCharacter);
     
         setLoading(false);
     }
@@ -36,19 +41,6 @@ export const CharacterPage = () => {
             getCharacter(params.id);
         }
     }, [])
-
-    // useEffect(()=>{
-    //     const getFilmslink = async (id: string) => {
-    //         const data = await api.getCharacter(id);
-    //         const links = data.films;
-    //         const filmsCharcater : any = [];
-    //         Promise.all(links.map((url: string) => fetch(url).then(response => response.json()))).then(fetchedFilms => filmsCharcater.push(fetchedFilms));
-    //         console.log(filmsCharcater);
-    //     };
-    //     if (params.id ) {
-    //         getFilmslink(params.id);
-    //     }
-    // }, [])
 
     return (
         <div>
@@ -76,8 +68,25 @@ export const CharacterPage = () => {
                             <div className='characterPage_info'><span>Birth Year</span>{character?.birth_year}</div>
                             <div className='characterPage_info'><span>Gender:</span>{character?.gender}</div>
                         </div>
+                        <div className='characterFilms'>
+                            
+                                <div>{filmsCharacter?.map((i, k) => (
+                                    <h2 key={k}>{filmsCharacter[k].title}</h2>
+                                ))}</div>
+                            
+                        </div>
                     </div>
                 </div>
+{/* 
+                <>
+                    {filmsCharacter && 
+                        <div className='characterFilms'>
+                            {filmsCharacter.map((i, k) => (
+                                <FilmCircle data={i} key={k} />
+                            ))}
+                        </div>
+                    }
+                </> */}
             </div>
             }
         </div>

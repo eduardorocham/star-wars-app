@@ -8,17 +8,29 @@ import './vehicles.css';
 export const Vehicles = () => {
     const [loading, setLoading] = useState(false);
     const [list, setList] = useState<VehicleType[]>([]);
+    const [page, setPage] = useState(1);
+
+    //Paginação:
+    const [itemsPerPage] = useState(10);
+    const pages = Math.ceil(39 / itemsPerPage);
 
     const loadVehicles = async () => {
         setLoading(true);
-        const vehicles = await api.getVehicles();
+        const vehicles = await api.getVehicles(page);
         setList(vehicles.results);
         setLoading(false);
     }
 
+    const nextPage = (e: any) => {
+        if (page !== parseInt(e.target.value)) {
+            setPage(parseInt(e.target.value));
+            setList([]);
+        }
+    }
+
     useEffect(()=>{
         loadVehicles();
-    },[])
+    },[page])
 
     return (
         <div>
@@ -30,9 +42,17 @@ export const Vehicles = () => {
                 <div className="vehicles">
                     <div className="vehicles_container">
                         {list.map((item, index)=>(
-                            <Vehicle id={index} data={item}/>
-                        ))
-                        }
+                            <Vehicle id={index} data={item} page={page}/>
+                        ))}
+                    </div>
+                    <div className='pagination'>
+                        {Array.from(Array(pages), (item, index) => {
+                            return (
+                                <button value={index + 1} className='button_pagination' onClick={nextPage} key={index}>
+                                    {index + 1}
+                                </button>
+                            )
+                        })}
                     </div>
                 </div>
             }

@@ -1,0 +1,15 @@
+* {
+    font-size: 62,5%;
+}
+
+.filmCicle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+}
+
+.filmCicle img {
+    width: inherit;
+    height: inherit;
+}

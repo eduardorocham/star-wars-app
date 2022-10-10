@@ -11,8 +11,8 @@ export const api = {
         const json = await response.json();
         return json;
     },
-    getVehicles: async () => {
-        const response = await fetch(`${BASE}/vehicles/`);
+    getVehicles: async (id: number) => {
+        const response = await fetch(`${BASE}/vehicles/?page=${id}`);
         const json = await response.json();
         return json;
     },
