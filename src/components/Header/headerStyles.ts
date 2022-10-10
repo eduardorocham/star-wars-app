@@ -40,20 +40,6 @@ export const MenuStyled = styled.ul<MenuStyledProps>`
     padding: 0;
     margin: 0;
 
-    li a {
-        color: #FFF;
-        font-family: 'Arial', sans-serif;
-        font-weight: bold;
-        font-size: 15px;
-        padding: 16px 18px;
-        text-transform: uppercase;
-        cursor: pointer;
-    }
-
-    li a:hover {
-        color: #DFCC1D;
-    }
-
     @media (max-width:414px) {
         display: ${(props) => props.show ? 'block' : 'none'};
         position: absolute;
@@ -71,6 +57,20 @@ export const MenuStyled = styled.ul<MenuStyledProps>`
         li a {
             font-size: 20px;
         }
+    }
+`
+
+export const List = styled.li`
+    color: #FFF;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 16px 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        color: #DFCC1D;
     }
 `
 

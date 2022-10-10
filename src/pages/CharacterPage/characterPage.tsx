@@ -5,6 +5,7 @@ import { api } from '../../api';
 import { LoadingSpinner } from '../../components/LoadingSpinner/loadingSpinner';
 
 import { Person } from '../../types/person';
+import { film } from '../../types/film';
 
 import './characterPage.css';
 import { json } from 'stream/consumers';
@@ -12,19 +13,20 @@ import { json } from 'stream/consumers';
 export const CharacterPage = () => {
     const [loading, setLoading] = useState(false);
     const [character, setCharacter] = useState<Person>();
-    const [films, setfilms] = useState<string[]>([]);
 
     const getCharacter = async (id: string) => {
         setLoading(true);
+
+        //Pegar personagem: 
         const person = await api.getCharacter(id);
         setCharacter(person);
-        setfilms(person.films);
+
+        //Pegar films do personagem
+        const links = person.films;
+        const filmsCharcater : any = [];
+        Promise.all(links.map((url: string) => fetch(url).then(response => response.json()))).then(fetchedFilms => filmsCharcater.push(fetchedFilms));
+    
         setLoading(false);
-        const newArray = films.map(async (item, index) => {
-            return await fetch(`${item}`).
-                then(response => response.json()).
-                then(json => json)
-        });
     }
 
     const params = useParams();
@@ -34,6 +36,19 @@ export const CharacterPage = () => {
             getCharacter(params.id);
         }
     }, [])
+
+    // useEffect(()=>{
+    //     const getFilmslink = async (id: string) => {
+    //         const data = await api.getCharacter(id);
+    //         const links = data.films;
+    //         const filmsCharcater : any = [];
+    //         Promise.all(links.map((url: string) => fetch(url).then(response => response.json()))).then(fetchedFilms => filmsCharcater.push(fetchedFilms));
+    //         console.log(filmsCharcater);
+    //     };
+    //     if (params.id ) {
+    //         getFilmslink(params.id);
+    //     }
+    // }, [])
 
     return (
         <div>

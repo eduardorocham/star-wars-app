@@ -6,16 +6,18 @@ import {
     HeaderStyled,
     LogoStyled,
     MenuStyled,
-    MenuMobileStyled
+    MenuMobileStyled,
+    List
 } from './headerStyles';
 
 
 export const Header = () => {
     const [show, setShow] = useState(false);
+    const [active, setActive] = useState(true);
 
     const showMenu = () => {
         setShow(!show);
-    }
+    };
 
     return (
         <HeaderStyled>
@@ -28,10 +30,18 @@ export const Header = () => {
             </LogoStyled>
 
             <MenuStyled show={show}>
-                <li><Link onClick={showMenu} to='/'>Home</Link></li>
-                <li><Link onClick={showMenu} to='/movies'>Movies</Link></li>
-                <li><Link onClick={showMenu} to='/characteres'>Characters</Link></li>
-                <li><Link onClick={showMenu} to='/vehicles'>Vehicles</Link></li> 
+                <Link onClick={showMenu} to='/'>
+                    <List>Home</List>
+                </Link>
+                <Link onClick={showMenu} to='/movies'>
+                    <List>Movies</List>
+                </Link>
+                <Link onClick={showMenu} to='/characteres'>
+                    <List>Characters</List>
+                </Link>
+                <Link onClick={showMenu} to='/vehicles'>
+                    <List>Vehicles</List>
+                </Link>
             </MenuStyled>
         </HeaderStyled>
     )
