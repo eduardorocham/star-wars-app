@@ -50,14 +50,6 @@ export const MenuStyled = styled.div<MenuStyledProps>`
         left: 0;
         top: 60px;
         background-color: #121317;
-
-        li {
-            margin: 30px 0;
-        }
-
-        li a {
-            font-size: 20px;
-        }
     }
 `
 
@@ -76,6 +68,10 @@ export const NavLink = styled(Link)`
 
     &:hover {
         color: #DFCC1D;
+    }
+
+    @media (max-width:414px) {
+        display: block;
     }
 `
 

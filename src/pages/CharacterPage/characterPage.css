@@ -8,6 +8,7 @@
 .character_Page {
     padding: 55px;
     display: flex;
+    height: 43vh;;
     align-items: center;
     background-color: #1E1E1E;
 }
@@ -67,6 +68,7 @@
 @media(max-width: 414px) {
     .character_Page {
         flex-direction: column;
+        height: fit-content;
     }
 
     .characterPage_img {

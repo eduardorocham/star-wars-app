@@ -6,6 +6,7 @@
 }
 
 .filmPage {
+    height: 43vh;
     padding: 55px;
     display: flex;
     align-items: center;
@@ -68,6 +69,7 @@
 @media (max-width:414px) {
     .filmPage {
         flex-direction: column;
+        height: fit-content;
     }
 
     .film_img {
