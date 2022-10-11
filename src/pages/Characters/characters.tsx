@@ -3,7 +3,7 @@ import { api } from "../../api";
 import { Person } from "../../components/Person/person";
 import { LoadingSpinner } from "../../components/LoadingSpinner/loadingSpinner";
 import { Person as PersonType } from "../../types/person";
-import './characteres.css';
+import './characters.css';
 
 export const Characteres = () => {
     const [loading, setLoading] = useState(false);
@@ -50,7 +50,7 @@ export const Characteres = () => {
                     <div className='pagination'>
                         {Array.from(Array(pages), (item, index) => {
                             return (
-                                <button value={index + 1} className='button_pagination' onClick={nextPage} key={index}>
+                                <button value={index + 1} className={index + 1 === page ? 'button_pagination-active' : 'button_pagination'} onClick={nextPage} key={index}>
                                     {index + 1}
                                 </button>
                             )

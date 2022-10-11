@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import logoImage from '../../assets/images/star_wars_logo.png';
 import menuMobile from '../../assets/images/menu_mobile.png';
-import { Link } from 'react-router-dom';
 import {
     HeaderStyled,
     LogoStyled,
     MenuStyled,
     MenuMobileStyled,
-    List
+    NavLink
 } from './headerStyles';
 
 
 export const Header = () => {
     const [show, setShow] = useState(false);
-    const [active, setActive] = useState(true);
+    const [activeStyle, setActiveStyle] = useState(false);
 
-    const showMenu = () => {
+    const showMenu = (e: any) => {
         setShow(!show);
     };
 
@@ -30,18 +29,18 @@ export const Header = () => {
             </LogoStyled>
 
             <MenuStyled show={show}>
-                <Link onClick={showMenu} to='/'>
-                    <List>Home</List>
-                </Link>
-                <Link onClick={showMenu} to='/movies'>
-                    <List>Movies</List>
-                </Link>
-                <Link onClick={showMenu} to='/characteres'>
-                    <List>Characters</List>
-                </Link>
-                <Link onClick={showMenu} to='/vehicles'>
-                    <List>Vehicles</List>
-                </Link>
+                <NavLink onClick={showMenu} to='/'>
+                    Home
+                </NavLink>
+                <NavLink onClick={showMenu} to='/movies'>
+                    Movies
+                </NavLink>
+                <NavLink onClick={showMenu} to='/characters'>
+                    Characters
+                </NavLink>
+                <NavLink onClick={showMenu} to='/vehicles'>
+                    Vehicles
+                </NavLink>
             </MenuStyled>
         </HeaderStyled>
     )

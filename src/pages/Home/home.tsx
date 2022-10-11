@@ -30,7 +30,7 @@ export const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <Link to='/characteres'><Button text='Go to characters'/></Link>
+                    <Link to='/characters'><Button text='Go to characters'/></Link>
                 </div>  
             </section>
             <section className="section_veiculos">

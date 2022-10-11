@@ -48,7 +48,7 @@ export const Vehicles = () => {
                     <div className='pagination'>
                         {Array.from(Array(pages), (item, index) => {
                             return (
-                                <button value={index + 1} className='button_pagination' onClick={nextPage} key={index}>
+                                <button value={index + 1} className={index + 1 === page ?'button_pagination-active' : 'button_pagination'} onClick={nextPage} key={index}>
                                     {index + 1}
                                 </button>
                             )

@@ -24,6 +24,15 @@
     margin: 0.1rem;
 }
 
+.button_pagination-active {
+    background-color: #DFCC1D;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0.1rem;
+}
+
 @media (max-width:414px) {
     .characteres_container {
         width: 390px;

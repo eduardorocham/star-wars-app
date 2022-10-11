@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
 
 export const HeaderStyled = styled.header`
     display: flex;
@@ -34,7 +35,7 @@ export const MenuMobileStyled = styled.div`
 type MenuStyledProps = {
     show: boolean;
 }
-export const MenuStyled = styled.ul<MenuStyledProps>`
+export const MenuStyled = styled.div<MenuStyledProps>`
     display: flex;
     list-style-type: none;
     padding: 0;
@@ -60,7 +61,7 @@ export const MenuStyled = styled.ul<MenuStyledProps>`
     }
 `
 
-export const List = styled.li`
+export const NavLink = styled(Link)`
     color: #FFF;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
@@ -68,6 +69,10 @@ export const List = styled.li`
     padding: 16px 18px;
     text-transform: uppercase;
     cursor: pointer;
+    
+    &.active {
+        color: #DFCC1D;
+    }
 
     &:hover {
         color: #DFCC1D;
