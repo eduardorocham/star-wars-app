@@ -6,6 +6,7 @@
 }
 
 .vehicle_Page {
+    height: 49vh;
     padding: 55px;
     display: flex;
     align-items: center;

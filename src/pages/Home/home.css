@@ -40,6 +40,7 @@
     max-width: 90rem;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: left;
     padding-top: 12rem;
 }

@@ -15,8 +15,8 @@ export const Home = () => {
                                 A guide to the main films of the franchise
                             </div>
                         </div>
+                        <Link to='/movies'><Button text='Go to movies'/></Link>
                     </div>
-                    <Link to='/movies'><Button text='Go to movies'/></Link>
                 </div>  
             </section>
             <section className="section_characteres">
@@ -29,8 +29,8 @@ export const Home = () => {
                                 A guide to the main characteres of the franchise
                             </div>
                         </div>
+                        <Link to='/characters'><Button text='Go to characters'/></Link>
                     </div>
-                    <Link to='/characters'><Button text='Go to characters'/></Link>
                 </div>  
             </section>
             <section className="section_veiculos">
@@ -43,8 +43,8 @@ export const Home = () => {
                                 A guide to the main vehicles of the franchise
                             </div>
                         </div>
+                        <Link to='/vehicles'><Button text='Go to vehicles'/></Link>
                     </div>
-                    <Link to='/vehicles'><Button text='Go to vehicles'/></Link>
                 </div>  
             </section>
         </div>
