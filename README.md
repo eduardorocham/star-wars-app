@@ -22,5 +22,3 @@ This is an application about Star Wars made with ReactJs ultilizing the public a
 2 - You can also see a lot of information on about the films, characters and vehicles.
 
 ![filmspage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/films-page.png)
-![characterspage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/characters-page.png)
-![vehiclespage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/vehicles-page.png)
