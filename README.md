@@ -35,8 +35,14 @@ You will also see any lint errors in the console.
 
 ![Homepage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/homepage.png)
 
-2 - You can also see a lot of information about the films, characters and vehicles.
+2 - You can also see a lot of information about the films.
 
 ![filmspage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/filmspage.png)
+
+3 - You can also see a lot of information about the characters.
+
 ![characterspage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/characterspage.png)
+
+2 - You can also see a lot of information about the vehicles.
+
 ![vehiclespage](https://github.com/eduardorocham/star-wars-app/blob/main/src/assets/readme/vehiclespage.png)
